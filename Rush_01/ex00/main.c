@@ -43,11 +43,16 @@ int		**malloc_tab(void)
 {
 	int **tab;
 
-	tab = (int**)malloc(sizeof(int*) * 4);
-	tab[0] = (int*)malloc(sizeof(int) * 4);
-	tab[1] = (int*)malloc(sizeof(int) * 4);
-	tab[2] = (int*)malloc(sizeof(int) * 4);
-	tab[3] = (int*)malloc(sizeof(int) * 4);
+	if(!(tab = (int**)malloc(sizeof(int*) * 4)))
+		return 0;
+	if(!(tab[0] = (int*)malloc(sizeof(int) * 4)))
+		return 0;
+	if(!(tab[1] = (int*)malloc(sizeof(int) * 4)))
+		return 0;
+	if(!(tab[2] = (int*)malloc(sizeof(int) * 4)))
+		return 0;
+	if(!(tab[3] = (int*)malloc(sizeof(int) * 4)))
+		return 0;
 	return (tab);
 }
 
@@ -59,8 +64,7 @@ int		*ft_condition(char *argv)
 
 	str = 0;
 	stock_number = 0;
-	condition = (int*)malloc(sizeof(int) * 16);
-	if (condition == NULL)
+	if(!(condition = (int*)malloc(sizeof(int) * 16)))
 		return (0);
 	while (argv[str] && stock_number < 16)
 	{
@@ -79,8 +83,7 @@ int		main(int argc, char **argv)
 	int **tab;
 	int *condition;
 
-	tab = malloc_tab();
-	if (tab == NULL)
+	if(!(tab = malloc_tab()))
 		return (0);
 	ft_init_tab(tab);
 	if (argc == 2)
