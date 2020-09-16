@@ -33,5 +33,6 @@ int main()
 	list = ft_create_elem("element1");
 	if (list) // Verifier bien si les elements sont bien crees
 		printf("%s\n", list->data);
+	free(list);
 	return (0);
 }
