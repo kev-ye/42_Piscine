@@ -31,7 +31,7 @@ int main()
 	t_list *list;
 
 	list = ft_create_elem("element1");
-	if (list) // Verifier bien si les elements sont bien crees
+	if (list) // Verify if all of the element are created
 		printf("%s\n", list->data);
 	free(list);
 	return (0);

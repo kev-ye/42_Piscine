@@ -14,21 +14,26 @@ t_list		*ft_create_elem(void *data)
 	return (list);
 }
 
-t_list *ft_list_last(t_list *begin_list)
+void ft_list_foreach(t_list *begin_list, void (*f)(void *))
 {
-    t_list *save;
-
     while (begin_list)
     {
-        save = begin_list;
-        begin_list = begin_list->next;
+       f(begin_list->data);
+       begin_list = begin_list->next;  
     }
-    return (save);
 }
 
-t_list *ft_list_last2(t_list *begin_list) //Used recursion
+void ft_list_foreach2(t_list *begin_list, void (*f)(void *)) // Used recursion
 {
-    return ((!begin_list) ? ft_list_last2(begin_list->next) : begin_list);
+    if (!begin_list)
+        return ;
+    f(begin_list->data);
+    ft_list_foreach2(begin_list->next, f);
+}
+
+void    f(void *data) // fonction for print data
+{
+    printf("%s\n", data);
 }
 
 int main()
@@ -36,16 +41,13 @@ int main()
     t_list *element1 = ft_create_elem("element1");
     t_list *element2 = ft_create_elem("element2");
     t_list *element3 = ft_create_elem("element3");
-    t_list *list;
+    t_list *list = NULL;
 
     list = element1;
     if (element1) // Verify if all of the element are created
         element1->next = element2;
     if (element2)
         element2->next = element3;
-    t_list *last = ft_list_last(list);
-    t_list *last2 = ft_list_last(list);
-    printf("No recursion : %s\n", last->data);
-    printf("Recursion : %s\n", last2->data);
+    ft_list_foreach(list, &f);
     return (0);
 }

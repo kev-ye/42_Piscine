@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include "ft_list.h"
 #include <stdio.h>
+#include <string.h>
 
 t_list		*ft_create_elem(void *data)
 {
@@ -14,33 +15,28 @@ t_list		*ft_create_elem(void *data)
 	return (list);
 }
 
-t_list *ft_list_at(t_list *begin_list, unsigned int nbr)
+void ft_list_foreach_if(t_list *begin_list, void (*f)(void *), void *data_ref, int (*cmp)())
 {
-    unsigned int i;
-
-    i = 0;
-    while (i < nbr)
+    while (begin_list)
     {
-        if (!begin_list)
-            return (NULL);
+        if (!cmp(begin_list->data, data_ref))
+            f(begin_list->data);
         begin_list = begin_list->next;
-        i++;
     }
-    return (begin_list);
 }
 
-t_list *ft_list_at2(t_list *begin_list, unsigned int nbr) // Used recursion Ver.1
+void ft_list_foreach_if2(t_list *begin_list, void (*f)(void *), void *data_ref, int (*cmp)()) // Used recursion
 {
     if (!begin_list)
-        return (NULL);
-    return ((nbr != 0) ? ft_list_at2(begin_list->next, nbr - 1) : begin_list);
+        return ;
+    if (!cmp(begin_list->data, data_ref))
+            f(begin_list->data);
+    ft_list_foreach_if2(begin_list->next, f, data_ref, cmp); 
 }
 
-t_list	*ft_list_at3(t_list *begin_list, unsigned int nbr) // Used recursion Ver.2
+void    f(void *data) // fonction for print data
 {
-	if (!begin_list || !nbr)
-		return (begin_list);
-	return (ft_list_at3(begin_list->next, nbr - 1));
+    printf("%s\n", data);
 }
 
 int main()
@@ -49,14 +45,12 @@ int main()
     t_list *element2 = ft_create_elem("element2");
     t_list *element3 = ft_create_elem("element3");
     t_list *list = NULL;
-    t_list *at;
 
     list = element1;
     if (element1) // Verify if all of the element are created
         element1->next = element2;
     if (element2)
         element2->next = element3;
-    at = ft_list_at(list, 0);
-    printf("%s\n", at->data);
+    ft_list_foreach_if(list, &f, "element1", &strcmp);
     return (0);
 }

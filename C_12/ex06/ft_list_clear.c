@@ -60,7 +60,7 @@ int main()
     t_list *list = NULL;
 
     list = element1;
-    if (element1) // Verifier bien si les elements sont bien crees
+    if (element1) // Verify if all of the element are created
         element1->next = element2;
     if (element2)
         element2->next = element3;
