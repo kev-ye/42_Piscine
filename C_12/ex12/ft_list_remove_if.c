@@ -15,7 +15,7 @@ t_list		*ft_create_elem(void *data)
 	return (list);
 }
 
-void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)(), void (*free_fct)(void *))
+void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)(), void (*free_fct)(void *)) // Ver.1
 {
     t_list *prev;
     t_list *list;
@@ -75,20 +75,19 @@ void ft_list_remove_if3(t_list **begin_list, void *data_ref, int (*cmp)(), void 
 {
     t_list *remove;
 
-    if (*begin_list)
+    if (!*begin_list)
+        return ;
+    if (!cmp((*begin_list)->data, data_ref))
     {
-        if (!cmp((*begin_list)->data, data_ref))
-        {
-            remove = *begin_list;
-            *begin_list = (*begin_list)->next;
-            if (free_fct)
-                free_fct(remove->data);
-            free(remove);
-            ft_list_remove_if3(begin_list, data_ref, cmp, free_fct); // parameter : begin_list == &(*begin_list)
-        }
-        else
-            ft_list_remove_if3(&(*begin_list)->next, data_ref, cmp, free_fct);
-    }    
+        remove = *begin_list;
+        *begin_list = (*begin_list)->next;
+        if (free_fct)
+            free_fct(remove->data);
+        free(remove);
+        ft_list_remove_if3(begin_list, data_ref, cmp, free_fct); // parameter : begin_list == &(*begin_list)
+    }
+    else
+        ft_list_remove_if3(&(*begin_list)->next, data_ref, cmp, free_fct);
 }
 
 int main()

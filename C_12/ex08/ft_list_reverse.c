@@ -14,11 +14,6 @@ t_list		*ft_create_elem(void *data)
 	return (list);
 }
 
-int	ft_list_size(t_list *begin_list) // Used recursion
-{
-	return ((begin_list) ? 1 + ft_list_size(begin_list->next) : 0);
-}
-
 void ft_list_reverse(t_list **begin_list)
 {
     t_list *prev;

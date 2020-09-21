@@ -23,6 +23,6 @@ main.c => Update : Les mallocs sont protegés
 20/09/20 :
 
 C_12
-fonction + main => Update : ex00 - ex12 fait
+fonction + main => Update : ex00 - ex14 fait
 
 ================================================================
