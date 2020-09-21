@@ -58,7 +58,7 @@ void ft_list_sort2(t_list **begin_list, int (*cmp)()) // Ver.2 : Change link
                 list->next = list->next->next;
                 prev->next->next = list;
             }
-                list = *begin_list;
+            list = *begin_list;
         }
         else
         {
