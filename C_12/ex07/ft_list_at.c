@@ -33,7 +33,7 @@ t_list *ft_list_at2(t_list *begin_list, unsigned int nbr) // Used recursion Ver.
 {
     if (!begin_list)
         return (NULL);
-    return ((nbr != 0) ? ft_list_at2(begin_list->next, nbr - 1) : begin_list);
+    return ((nbr) ? ft_list_at2(begin_list->next, nbr - 1) : begin_list);
 }
 
 t_list	*ft_list_at3(t_list *begin_list, unsigned int nbr) // Used recursion Ver.2
