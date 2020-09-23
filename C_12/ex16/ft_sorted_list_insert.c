@@ -21,9 +21,13 @@ void ft_sorted_list_insert(t_list **begin_list, void *data, int (*cmp)())
     t_list *element;
 
     list = *begin_list;
-    element = ft_create_elem(data);
-    if (!list || !element)
+    if(!(element = ft_create_elem(data)))
         return ;
+    if (!list)
+    {
+        list = element;
+        return ;
+    }
     if (cmp(data, list->data) < 0) // for first element of list
     {
         element->next = *begin_list;
@@ -50,6 +54,12 @@ void ft_sorted_list_insert2(t_list **begin_list, void *data, int (*cmp)()) // us
     else
         ft_sorted_list_insert2(&(*begin_list)->next, data, cmp);
 }
+
+// another solution
+// you can use function ft_list_push_front and ft_list_sort
+// in ft_sorted_list_insert, first use function ft_list_push_front to add the element in list
+// and use the second function ft_list_sort to sort the list
+// but i think this method isn't very cool so i just write in comments
 
 int main()
 {

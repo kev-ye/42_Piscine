@@ -31,7 +31,7 @@ void ft_list_foreach2(t_list *begin_list, void (*f)(void *)) // Used recursion
     ft_list_foreach2(begin_list->next, f);
 }
 
-void    f(void *data) // fonction for print data
+void    f(void *data) // function for print data
 {
     printf("%s\n", data);
 }

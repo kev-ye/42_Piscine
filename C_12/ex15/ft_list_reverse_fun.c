@@ -33,12 +33,12 @@ void ft_list_reverse_fun(t_list *begin_list) // Ver.1 : 1 by 1 => swap data of l
     }
 }
 
-static int	ft_list_size(t_list *begin_list) // fonction for ft_list_reverse_fun2 and ft_list_reverse_fun3
+static int	ft_list_size(t_list *begin_list) // function for ft_list_reverse_fun2 and ft_list_reverse_fun3
 {
 	return ((begin_list) ? 1 + ft_list_size(begin_list->next) : 0);
 }
 
-static t_list *ft_list_at(t_list *begin_list, unsigned int nbr) // fonction for ft_list_reverse_fun2 and ft_list_reverse_fun3
+static t_list *ft_list_at(t_list *begin_list, unsigned int nbr) // function for ft_list_reverse_fun2 and ft_list_reverse_fun3
 {
     if (!begin_list)
         return (NULL);
