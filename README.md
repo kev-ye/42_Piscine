@@ -18,11 +18,15 @@ ft_ten_queens_puzzle.c => Update : exo fait
 Rush_01/ex00
 main.c => Update : Les mallocs sont protegés
 
+// ils sont faite apres la piscines
+
 ================================================================
 
-22/09/20 :
+23/09/20 :
 
 C_12
-fonction + main => Update : ex00 - ex15 fait
+fonction + main => Update : ex00 - ex17 fait
+
+// ils sont faites apres la piscine
 
 ================================================================

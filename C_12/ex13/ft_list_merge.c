@@ -58,7 +58,7 @@ int main()
         element4->next = element5;
     if (element5)
         element5->next = element6;
-    ft_list_merge2(&list1, list2);
+    ft_list_merge(&list1, list2);
     while (list1)
     {
         printf("%s\n", list1->data);
