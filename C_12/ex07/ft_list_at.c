@@ -29,14 +29,14 @@ t_list *ft_list_at(t_list *begin_list, unsigned int nbr)
     return (begin_list);
 }
 
-t_list *ft_list_at2(t_list *begin_list, unsigned int nbr) // Used recursion Ver.1
+t_list *ft_list_at2(t_list *begin_list, unsigned int nbr) // Used recursion Ver.1.
 {
     if (!begin_list)
         return (NULL);
     return ((nbr) ? ft_list_at2(begin_list->next, nbr - 1) : begin_list);
 }
 
-t_list	*ft_list_at3(t_list *begin_list, unsigned int nbr) // Used recursion Ver.2
+t_list	*ft_list_at3(t_list *begin_list, unsigned int nbr) // Used recursion Ver.2.
 {
 	if (!begin_list || !nbr)
 		return (begin_list);

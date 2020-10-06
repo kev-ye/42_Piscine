@@ -18,7 +18,7 @@ void ft_list_push_front(t_list **begin_list, void *data)
 {
     t_list *element;
 
-    if ((element = ft_create_elem(data))) // Verify if all of the element are created
+    if ((element = ft_create_elem(data))) // Verify if all of the element are created.
     {
         if (*begin_list)
             element->next = *begin_list;
@@ -33,7 +33,7 @@ int main()
     t_list *list;
     
     list = element1;
-    if (element1) // Verify if all of the element are created
+    if (element1) // Verify if all of the element are created.
         element1->next = element2;
     ft_list_push_front(&list, "insert element");
     while (list)

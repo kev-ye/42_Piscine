@@ -23,7 +23,7 @@ void ft_list_foreach(t_list *begin_list, void (*f)(void *))
     }
 }
 
-void ft_list_foreach2(t_list *begin_list, void (*f)(void *)) // Used recursion
+void ft_list_foreach2(t_list *begin_list, void (*f)(void *)) // Used recursion.
 {
     if (!begin_list)
         return ;
@@ -31,7 +31,7 @@ void ft_list_foreach2(t_list *begin_list, void (*f)(void *)) // Used recursion
     ft_list_foreach2(begin_list->next, f);
 }
 
-void    f(void *data) // function for print data
+void    f(void *data) // function for print data.
 {
     printf("%s\n", data);
 }
@@ -44,7 +44,7 @@ int main()
     t_list *list = NULL;
 
     list = element1;
-    if (element1) // Verify if all of the element are created
+    if (element1) // Verify if all of the element are created.
         element1->next = element2;
     if (element2)
         element2->next = element3;

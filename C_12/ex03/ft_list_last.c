@@ -26,7 +26,7 @@ t_list *ft_list_last(t_list *begin_list)
     return (save);
 }
 
-t_list *ft_list_last2(t_list *begin_list) //Used recursion
+t_list *ft_list_last2(t_list *begin_list) //Used recursion.
 {
     return ((!begin_list) ? ft_list_last2(begin_list->next) : begin_list);
 }
@@ -39,7 +39,7 @@ int main()
     t_list *list;
 
     list = element1;
-    if (element1) // Verify if all of the element are created
+    if (element1) // Verify if all of the element are created.
         element1->next = element2;
     if (element2)
         element2->next = element3;

@@ -29,7 +29,7 @@ void    ft_list_clear(t_list *begin_list, void (*free_fct)(void *))
     }
 }
 
-void    ft_list_clear2(t_list *begin_list, void (*free_fct)(void *)) // Used recursion Ver.1
+void    ft_list_clear2(t_list *begin_list, void (*free_fct)(void *)) // Used recursion Ver.1.
 {
     t_list *tmp;
 
@@ -42,7 +42,7 @@ void    ft_list_clear2(t_list *begin_list, void (*free_fct)(void *)) // Used rec
     ft_list_clear2(begin_list->next, free_fct);
 }
 
-void    ft_list_clear3(t_list *begin_list, void (*free_fct)(void *)) // Used recursion Ver.2
+void    ft_list_clear3(t_list *begin_list, void (*free_fct)(void *)) // Used recursion Ver.2.
 {
     if (!begin_list)
         return ;
@@ -60,7 +60,7 @@ int main()
     t_list *list = NULL;
 
     list = element1;
-    if (element1) // Verify if all of the element are created
+    if (element1) // Verify if all of the element are created.
         element1->next = element2;
     if (element2)
         element2->next = element3;

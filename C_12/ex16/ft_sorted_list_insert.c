@@ -28,23 +28,23 @@ void ft_sorted_list_insert(t_list **begin_list, void *data, int (*cmp)())
         list = element;
         return ;
     }
-    if (cmp(data, list->data) < 0) // for first element of list
+    if (cmp(data, list->data) < 0) // for first element of list.
     {
         element->next = *begin_list;
         *begin_list = element;
         return ;
     }
-    while (list->next && cmp(data, list->next->data) >= 0) // search element if resultat of cmp has greater than of equal to zero
+    while (list->next && cmp(data, list->next->data) >= 0) // search element if resultat of cmp has greater than of equal to zero.
         list = list->next;
     element->next = list->next;
     list->next = element;
 }
 
-void ft_sorted_list_insert2(t_list **begin_list, void *data, int (*cmp)()) // used recursion
+void ft_sorted_list_insert2(t_list **begin_list, void *data, int (*cmp)()) // used recursion.
 {
     t_list *element;
 
-    if (!*begin_list || cmp(data, (*begin_list)->data) <= 0) // if begin_list equal NULL or result of cmp has less than or equal to zero that insert element
+    if (!*begin_list || cmp(data, (*begin_list)->data) <= 0) // if begin_list equal NULL or result of cmp has less than or equal to zero that insert element.
     {
         if (!(element = ft_create_elem(data)))
             return ;
@@ -55,11 +55,11 @@ void ft_sorted_list_insert2(t_list **begin_list, void *data, int (*cmp)()) // us
         ft_sorted_list_insert2(&(*begin_list)->next, data, cmp);
 }
 
-// another solution
-// you can use function ft_list_push_front and ft_list_sort
-// in ft_sorted_list_insert, first use function ft_list_push_front to add the element in list
-// and use the second function ft_list_sort to sort the list
-// but i think this method isn't very cool so i just write in comments
+// another solution.
+// you can use function ft_list_push_front and ft_list_sort.
+// in ft_sorted_list_insert, first use function ft_list_push_front to add the element in list.
+// and use the second function ft_list_sort to sort the list.
+// but i think this method isn't very cool so i just write in comments.
 
 int main()
 {
@@ -71,7 +71,7 @@ int main()
     t_list *list = NULL;
 
     list = element1;
-    if (element1) // Verify if all of the element are created
+    if (element1) // Verify if all of the element are created.
         element1->next = element2;
     if (element2)
         element2->next = element3;

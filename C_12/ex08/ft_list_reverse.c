@@ -39,18 +39,18 @@ int main()
     t_list *tmp;
 
     list = element1;
-    if (element1) // Verify if all of the element are created
+    if (element1) // Verify if all of the element are created.
         element1->next = element2;
     if (element2)
         element2->next = element3;
-    tmp = list; // save initial address of list for After
+    tmp = list; // save initial address of list for After.
     printf("////// Before //////\n");
     while (list)
     {
         printf("%s\n", list->data);
         list = list->next;
     }
-    list = tmp; // back to initial address of list
+    list = tmp; // back to initial address of list.
     ft_list_reverse(&list);
     printf("////// After //////\n");
     while (list)

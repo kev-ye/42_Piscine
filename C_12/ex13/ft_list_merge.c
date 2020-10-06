@@ -27,7 +27,7 @@ void ft_list_merge(t_list **begin_list1, t_list *begin_list2)
         list->next = begin_list2;
 }
 
-void ft_list_merge2(t_list **begin_list1, t_list *begin_list2) // Used recursion
+void ft_list_merge2(t_list **begin_list1, t_list *begin_list2) // Used recursion.
 {
     if (!*begin_list1)
         *begin_list1 = begin_list2;
@@ -49,7 +49,7 @@ int main()
     t_list *list2 = NULL;
 
     list1 = element1;
-    if (element1) // Verify if all of the element are created
+    if (element1) // Verify if all of the element are created.
         element1->next = element2;
     if (element2)
         element2->next = element3;

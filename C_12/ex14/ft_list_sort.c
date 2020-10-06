@@ -15,7 +15,7 @@ t_list		*ft_create_elem(void *data)
 	return (list);
 }
 
-void ft_list_sort(t_list **begin_list, int (*cmp)()) // Ver.1 : change data
+void ft_list_sort(t_list **begin_list, int (*cmp)()) // Ver.1 : change data.
 {
     t_list *list;
     void *data;
@@ -35,7 +35,7 @@ void ft_list_sort(t_list **begin_list, int (*cmp)()) // Ver.1 : change data
     }
 }
 
-void ft_list_sort2(t_list **begin_list, int (*cmp)()) // Ver.2 : Change link
+void ft_list_sort2(t_list **begin_list, int (*cmp)()) // Ver.2 : Change link.
 {
     t_list *list;
     t_list *prev;
@@ -79,7 +79,7 @@ int main()
     t_list *list = NULL;
 
     list = element1;
-    if (element1) // Verify if all of the element are created
+    if (element1) // Verify if all of the element are created.
         element1->next = element2;
     if (element2)
         element2->next = element3;

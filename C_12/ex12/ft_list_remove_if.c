@@ -15,7 +15,7 @@ t_list		*ft_create_elem(void *data)
 	return (list);
 }
 
-void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)(), void (*free_fct)(void *)) // Ver.1
+void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)(), void (*free_fct)(void *)) // Ver.1.
 {
     t_list *prev;
     t_list *list;
@@ -27,23 +27,23 @@ void ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)(), void (
         if (!cmp(list->data, data_ref))
         {
             if (prev)
-                prev->next = list->next; // link prev element and next element
+                prev->next = list->next; // link prev element and next element.
             else
-                *begin_list = list->next; // this is for the first element, if we need remove it, we just need to move on the next element
+                *begin_list = list->next; // this is for the first element, if we need remove it, we just need to move on the next element.
             if (free_fct)
                 free_fct(list->data);
             free(list);
-            list = ((prev) ? prev->next : *begin_list); // is same if we use "list = list->next", because in the memory, we have linked prev element and next element
+            list = ((prev) ? prev->next : *begin_list); // is same if we use "list = list->next", because in the memory, we have linked prev element and next element.
         }
         else
         {
-            prev = list; // save the prev element
+            prev = list; // save the prev element.
             list = list->next;
         }
     }
 }
 
-void ft_list_remove_if2(t_list **begin_list, void *data_ref, int (*cmp)(), void (*free_fct)(void *)) // Ver.2
+void ft_list_remove_if2(t_list **begin_list, void *data_ref, int (*cmp)(), void (*free_fct)(void *)) // Ver.2.
 {
     t_list *current;
     t_list *remove;
@@ -54,7 +54,7 @@ void ft_list_remove_if2(t_list **begin_list, void *data_ref, int (*cmp)(), void 
         if (!cmp(current->next->data, data_ref))
         {
             remove = current->next;
-            current->next = current->next->next; // replace the next element with next next element
+            current->next = current->next->next; // replace the next element with next next element.
             if (free_fct)
                 free_fct(remove->data);
             free(remove);
@@ -62,7 +62,7 @@ void ft_list_remove_if2(t_list **begin_list, void *data_ref, int (*cmp)(), void 
         current = current->next;
     }
     current = *begin_list;
-    if (current && !cmp(current->data, data_ref)) // for the first element, if we need remove it
+    if (current && !cmp(current->data, data_ref)) // for the first element, if we need remove it.
     {
         *begin_list = current->next;
         if (free_fct)
@@ -71,7 +71,7 @@ void ft_list_remove_if2(t_list **begin_list, void *data_ref, int (*cmp)(), void 
     }
 }
 
-void ft_list_remove_if3(t_list **begin_list, void *data_ref, int (*cmp)(), void (*free_fct)(void *)) // Used recursion
+void ft_list_remove_if3(t_list **begin_list, void *data_ref, int (*cmp)(), void (*free_fct)(void *)) // Used recursion.
 {
     t_list *remove;
 
@@ -84,7 +84,7 @@ void ft_list_remove_if3(t_list **begin_list, void *data_ref, int (*cmp)(), void 
         if (free_fct)
             free_fct(remove->data);
         free(remove);
-        ft_list_remove_if3(begin_list, data_ref, cmp, free_fct); // parameter : begin_list == &(*begin_list)
+        ft_list_remove_if3(begin_list, data_ref, cmp, free_fct); // parameter : begin_list == &(*begin_list).
     }
     else
         ft_list_remove_if3(&(*begin_list)->next, data_ref, cmp, free_fct);
@@ -98,7 +98,7 @@ int main()
     t_list *list = NULL;
 
     list = element1;
-    if (element1) // Verify if all of the element are created
+    if (element1) // Verify if all of the element are created.
         element1->next = element2;
     if (element2)
         element2->next = element3;

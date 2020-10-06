@@ -22,7 +22,7 @@ t_list	*ft_list_push_strs(int size, char **strs)
 
 	begin = NULL;
 	i = 0;
-	while (i < size && (element = ft_create_elem(strs[i]))) // Verify if all of the element are created
+	while (i < size && (element = ft_create_elem(strs[i]))) // Verify if all of the element are created.
 	{
 		element->next = begin;
 		begin = element;

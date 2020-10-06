@@ -15,7 +15,7 @@ t_list		*ft_create_elem(void *data)
 	return (list);
 }
 
-void ft_sorted_list_insert_element(t_list **list, t_list *element, int (*cmp)()) // function takes in ex16 but have some modification
+void ft_sorted_list_insert_element(t_list **list, t_list *element, int (*cmp)()) // function takes in ex16 but have some modification.
 {
     if (!*list || cmp(element->data, (*list)->data) <= 0)
     {
@@ -34,15 +34,15 @@ void ft_sorted_list_merge(t_list **begin_list1, t_list *begin_list2, int (*cmp)(
     ft_sorted_list_insert_element(begin_list1, begin_list2, cmp);
 }
 
-// i don't found iterative solution for my ft_sorted_list_merge 
-// because if i use a loop, the link of begin_list2 change in function of ft_sorted_list_insert_elemen
-// so that giving an infinite loop result
+// i don't found iterative solution for my ft_sorted_list_merge.
+// because if i use a loop, the link of begin_list2 change in function of ft_sorted_list_insert_elemen.
+// so that giving an infinite loop result.
 
-// another solution
-// you can use function ft_list_merge and ft_list_sort
-// in ft_sorted_list_merge, first use function ft_list_merge to recombine the two lists
-// and use the second function ft_list_sort to sort the list
-// but i think this method isn't very cool so i just write in comments
+// another solution.
+// you can use function ft_list_merge and ft_list_sort.
+// in ft_sorted_list_merge, first use function ft_list_merge to recombine the two lists.
+// and use the second function ft_list_sort to sort the list.
+// but i think this method isn't very cool so i just write in comments.
 
 int main()
 {
@@ -56,7 +56,7 @@ int main()
     t_list *list2 = NULL;
 
     list1 = element1;
-    if (element1) // Verify if all of the element are created
+    if (element1) // Verify if all of the element are created.
         element1->next = element2;
     if (element2)
         element2->next = element3;

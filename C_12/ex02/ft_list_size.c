@@ -27,7 +27,7 @@ int ft_list_size(t_list *begin_list)
     return (count);
 }
 
-int	ft_list_size2(t_list *begin_list) // Used recursion
+int	ft_list_size2(t_list *begin_list) // Used recursion.
 {
 	return ((begin_list) ? 1 + ft_list_size2(begin_list->next) : 0);
 }
@@ -40,7 +40,7 @@ int main()
     t_list *list;
 
     list = element1;
-    if (element1) // Verify if all of the element are created
+    if (element1) // Verify if all of the element are created.
         element1->next = element2;
     if (element2)
         element2->next = element3;

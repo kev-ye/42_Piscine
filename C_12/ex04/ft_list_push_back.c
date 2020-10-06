@@ -29,7 +29,7 @@ void	ft_list_push_back(t_list **begin_list, void *data)
     }
 }
 
-void	ft_list_push_back2(t_list **begin_list, void *data) // Used recursion Ver.1
+void	ft_list_push_back2(t_list **begin_list, void *data) // Used recursion Ver.1.
 {
     t_list *tmp;
 
@@ -42,7 +42,7 @@ void	ft_list_push_back2(t_list **begin_list, void *data) // Used recursion Ver.1
         tmp->next = ft_create_elem(data);
 }
 
-void	ft_list_push_back3(t_list **begin_list, void *data) // Used recursion Ver.2
+void	ft_list_push_back3(t_list **begin_list, void *data) // Used recursion Ver.2.
 {
 	if (!*begin_list)
 		*begin_list = ft_create_elem(data);
@@ -60,7 +60,7 @@ int main()
     t_list *list = NULL;
 
     list = element1;
-    if (element1) // Verify if all of the element are created
+    if (element1) // Verify if all of the element are created.
         element1->next = element2;
     if (element2)
         element2->next = element3;
