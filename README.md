@@ -2,11 +2,11 @@
 
 ================================================================
 
-Mes exercices realisés pendant la piscine.
+My exercises carried out during the Piscine 42.
 
 ================================================================
 
-Essayer de comprendre les codes avant de faire le copier-coller.
+Try to understand the codes before copying and pasting.
 
 ================================================================
 
@@ -16,9 +16,9 @@ C_05/ex08
 ft_ten_queens_puzzle.c => Update : exo fait
 
 Rush_01/ex00
-main.c => Update : Les mallocs sont protegés
+main.c => Update : Mallocs are protected
 
-// ils sont faite apres la piscines
+// They are made after the Piscine
 
 ================================================================
 
@@ -27,6 +27,6 @@ main.c => Update : Les mallocs sont protegés
 C_12
 fonction + main => Update : ex00 - ex17 fait
 
-// ils sont faites apres la piscine
+// They are made after the Piscine
 
 ================================================================
