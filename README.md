@@ -24,5 +24,3 @@ Try to understand the codes before copying and pasting.
         * All exo : function + main
 
 (No check norme)
-
-================================================================
