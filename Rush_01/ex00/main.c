@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaye <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: kaye <kaye@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/15 11:18:09 by kaye              #+#    #+#             */
-/*   Updated: 2020/08/16 19:40:22 by kaye             ###   ########.fr       */
+/*   Updated: 2021/02/04 22:21:16 by kaye             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_rush.h"
-
+#include <libc.h>
 int		ft_check_argv(char *argv)
 {
 	int i;
@@ -42,18 +42,32 @@ int		ft_check_argv(char *argv)
 int		**malloc_tab(void)
 {
 	int **tab;
+	int i;
 
+	i = 0;
 	if(!(tab = (int**)malloc(sizeof(int*) * 4)))
 		return 0;
-	if(!(tab[0] = (int*)malloc(sizeof(int) * 4)))
-		return 0;
-	if(!(tab[1] = (int*)malloc(sizeof(int) * 4)))
-		return 0;
-	if(!(tab[2] = (int*)malloc(sizeof(int) * 4)))
-		return 0;
-	if(!(tab[3] = (int*)malloc(sizeof(int) * 4)))
-		return 0;
+	while (i < 4)
+	{
+		if(!(tab[i] = (int*)malloc(sizeof(int) * 4)))
+			return 0;
+		++i;
+	}
 	return (tab);
+}
+
+void	free_tab(int **tab)
+{
+	int i;
+
+	i = -1;
+	if (tab != NULL)
+	{
+		while (++i < 4)
+			if (tab[i] != NULL)
+				free(tab[i]);
+		free(tab);
+	}
 }
 
 int		*ft_condition(char *argv)
@@ -102,6 +116,7 @@ int		main(int argc, char **argv)
 	}
 	else
 		ft_putstr("Error\n");
-	free(tab);
+	free_tab(tab);
+	getchar();
 	return (0);
 }
