@@ -8,7 +8,7 @@ My exercises carried out during the Piscine 42.
 
     Try to understand the codes before copying and pasting.
 
-## Information
+## Info
 
 11/09/20 :
 
@@ -21,4 +21,4 @@ My exercises carried out during the Piscine 42.
 >C_12
 >>All exo : function + main
 
-(No check norme)
+ℹ️ Norme no check
