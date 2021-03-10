@@ -10,6 +10,8 @@ My exercises carried out during the Piscine 42.
 
 ## Info
 
+(Norme no check)
+
 11/09/20 :
 
 >C_05/ex08 : ft_ten_queens_puzzle.c
@@ -20,5 +22,3 @@ My exercises carried out during the Piscine 42.
 23/09/20 :
 >C_12
 >>All exo : function + main
-
-ℹ️ Norme no check
